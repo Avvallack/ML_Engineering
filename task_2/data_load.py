@@ -6,6 +6,11 @@ def bring_to_float(x):
         return x
     return float(x.replace(',', '.'))
 
+def replace_nan(x):
+    if x == -200:
+        return np.nan
+    return x
+
 
 if __name__ == '__main__':
     df = pd.read_csv('AirQualityUCI.csv', sep=';',
@@ -15,6 +20,9 @@ if __name__ == '__main__':
 
     for col in ['CO(GT)', 'C6H6(GT)', 'T', 'RH', 'AH']:
         df[col] = df[col].apply(bring_to_float)
+    
+    for col in df.columns:
+        df[col] = df[col].apply(replace_nan)
 
     df.dropna(inplace=True)
 
