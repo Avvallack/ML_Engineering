@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 
 def bring_to_float(x):
