@@ -1,0 +1,17 @@
+stages:
+  load_data:
+    cmd: python3 data_load.py
+    deps:
+    - data_load.py
+    outs:
+    - prepared_data.csv
+  prepare_and_train:
+    cmd: python3 prepare_and_train.py
+    deps:
+      - prepare_and_train.py
+      - prepared_data.csv
+
+    metrics:
+      - metrics.json:
+          cache: false
+

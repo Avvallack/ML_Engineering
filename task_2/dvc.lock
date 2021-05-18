@@ -1,0 +1,25 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python3 data_load.py
+    deps:
+    - path: data_load.py
+      md5: 0d11fd6368c97a25228e1e6d543d14ab
+      size: 716
+    outs:
+    - path: prepared_data.csv
+      md5: dce4555970b1a33efab22e553a3bbb9e
+      size: 722997
+  prepare_and_train:
+    cmd: python3 prepare_and_train.py
+    deps:
+    - path: prepare_and_train.py
+      md5: 8feab1a0b692ef07bf34917e7e88229e
+      size: 1101
+    - path: prepared_data.csv
+      md5: dce4555970b1a33efab22e553a3bbb9e
+      size: 722997
+    outs:
+    - path: metrics.json
+      md5: 4ebbcb6b09dd99da4136ecc1836fcd9f
+      size: 88
