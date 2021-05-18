@@ -4,12 +4,12 @@ stages:
     cmd: python3 data_load.py
     deps:
     - path: data_load.py
-      md5: 0d11fd6368c97a25228e1e6d543d14ab
-      size: 716
+      md5: d9cc3bd2e4173768b530d570b6308086
+      size: 886
     outs:
     - path: prepared_data.csv
-      md5: dce4555970b1a33efab22e553a3bbb9e
-      size: 722997
+      md5: 8ad8fb0508bb51d739bbbf4d161049ba
+      size: 62277
   prepare_and_train:
     cmd: python3 prepare_and_train.py
     deps:
@@ -17,9 +17,9 @@ stages:
       md5: 8feab1a0b692ef07bf34917e7e88229e
       size: 1101
     - path: prepared_data.csv
-      md5: dce4555970b1a33efab22e553a3bbb9e
-      size: 722997
+      md5: 8ad8fb0508bb51d739bbbf4d161049ba
+      size: 62277
     outs:
     - path: metrics.json
-      md5: 4ebbcb6b09dd99da4136ecc1836fcd9f
-      size: 88
+      md5: fd62776402dda75b1b13e0b81196ef6d
+      size: 87
