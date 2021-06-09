@@ -1,3 +1,4 @@
+import os
 import logging
 import warnings
 from urllib.parse import urlparse
@@ -13,7 +14,6 @@ from sklearn.model_selection import GridSearchCV
 
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
-
 
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
