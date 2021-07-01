@@ -1,6 +1,6 @@
 schema: '2.0'
 stages:
-  load_data:
+  data_load:
     cmd: python3 data_load.py
     deps:
     - path: data_load.py
@@ -21,5 +21,18 @@ stages:
       size: 62277
     outs:
     - path: metrics.json
-      md5: fd62776402dda75b1b13e0b81196ef6d
+      md5: 1133b37c024eccbfe48bfde7c02735c3
       size: 87
+  data_prep:
+    cmd: python3 data_load.py
+    deps:
+    - path: AirQualityUCI.csv
+      md5: 6ea455cfb02ce28a5f891ced05d16d83
+      size: 785065
+    - path: data_load.py
+      md5: d9cc3bd2e4173768b530d570b6308086
+      size: 886
+    outs:
+    - path: prepared_data.csv
+      md5: 8ad8fb0508bb51d739bbbf4d161049ba
+      size: 62277

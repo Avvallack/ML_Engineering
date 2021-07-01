@@ -1,8 +1,9 @@
 stages:
-  load_data:
+  data_prep:
     cmd: python3 data_load.py
     deps:
     - data_load.py
+    - AirQualityUCI.csv
     outs:
     - prepared_data.csv
   prepare_and_train:
@@ -10,8 +11,6 @@ stages:
     deps:
       - prepare_and_train.py
       - prepared_data.csv
-
     metrics:
       - metrics.json:
           cache: false
-
