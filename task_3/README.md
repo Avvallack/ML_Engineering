@@ -3,7 +3,6 @@
 This service will create a containerized ml-flow server and run simple app and push the results of it work to server
 ## Content
 - Ml-flow web server
-- Nginx server to forward request from web to web server
 - MYSQL database for store runs
 - S3 bucket for artifact storage
 ## How to run
@@ -16,3 +15,4 @@ This service will create a containerized ml-flow server and run simple app and p
     6. MYSQL_PASSWORD
     7. MYSQL_ROOT_PASSWORD
 - then run the command: docker-compose up -d --build
+- open the mlflow server on localhost:5000 to check results
