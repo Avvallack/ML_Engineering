@@ -21,6 +21,7 @@ with DAG(
         schedule_interval=timedelta(hours=1),
         start_date=days_ago(0),
         tags=['ml_eng'],
+        max_active_runs=1
 ) as dag:
     # t1, t2 and t3 are examples of tasks created by instantiating operators
     step1 = BashOperator(
